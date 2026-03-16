@@ -1,0 +1,110 @@
+/* Estilo geral da página */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    background-color:#f4f4f4;
+}
+
+/* Cabeçalho */
+header{
+    background-color:#1e3a8a;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+/* Menu de navegação */
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin:10px;
+    padding:8px 15px;
+    border-radius:5px;
+}
+
+/* efeito hover nos links */
+nav a:hover{
+    background-color:#3b82f6;
+}
+
+/* Conteúdo principal */
+main{
+    width:80%;
+    margin:auto;
+}
+
+/* Seções */
+section{
+    background:white;
+    margin:20px 0;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-shadow:0px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Artigos */
+article{
+    background:#eef2ff;
+    padding:15px;
+    margin-top:10px;
+    border-left:5px solid #1e3a8a;
+}
+
+/* Lista de serviços */
+ul{
+    padding-left:20px;
+}
+
+/* Tabela */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th, table td{
+    border:1px solid #999;
+    padding:10px;
+    text-align:left;
+}
+
+table th{
+    background-color:#1e3a8a;
+    color:white;
+}
+
+/* Formulário */
+form input, form textarea{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    background-color:#1e3a8a;
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:5px;
+}
+
+/* efeito hover no botão */
+button:hover{
+    background-color:#2563eb;
+}
+
+/* Rodapé */
+footer{
+    background-color:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
