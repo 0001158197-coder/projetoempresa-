@@ -1,96 +1,93 @@
-// Alerta ao carregar
-window.addEventListener("load", function(){
-    alert("Bem-vindo ao site!");
+// BOAS-VINDAS
+window.addEventListener("load", () => {
+alert("Bem-vindo ao site!");
 });
 
-// Função segura
-function addClick(id, callback){
-    let el = document.getElementById(id);
-    if(el){
-        el.addEventListener("click", callback);
-    }
-}
-
-// 1 - Boas-vindas
-addClick("btnBoasVindas", function(){
-    document.getElementById("mensagem").textContent =
-    "Bem-vindo ao meu site desenvolvido com HTML, CSS e JavaScript!";
+// DARK MODE
+document.getElementById("darkMode").addEventListener("click", () => {
+document.body.classList.toggle("dark");
 });
 
-// 2 - Alterar texto
-addClick("btnTexto", function(){
-    document.getElementById("textoOriginal").textContent =
-    "Este site agora possui interatividade com JavaScript!";
-});
-
-// 3 - Alterar cor
-addClick("btnCor", function(){
-    let sec = document.getElementById("inicio");
-    if(sec){
-        sec.style.backgroundColor = "#dbeafe";
-    }
-});
-
-// 4 - Mostrar / esconder
-let visivel = false;
-
-addClick("btnMostrar", function(){
-    let texto = document.getElementById("extra");
-
-    if(texto){
-        texto.style.display = visivel ? "none" : "block";
-        visivel = !visivel;
-    }
-});
-
-// 5 - Menu
-let itens = document.querySelectorAll(".menu-item");
-
-itens.forEach(function(item){
-    item.addEventListener("click", function(){
-        alert("Você acessou a seção " + item.textContent);
-    });
-});
-
-// 6 - Imagem
-let img = document.getElementById("imagem");
-
-if(img){
-    img.addEventListener("mouseover", function(){
-        img.src = "https://via.placeholder.com/400/0000FF";
-    });
-
-    img.addEventListener("mouseout", function(){
-        img.src = "https://via.placeholder.com/400";
-    });
-}
-
-// EXTRA - Dark Mode
-addClick("darkMode", function(){
-    document.body.classList.toggle("dark");
-});
-
-// EXTRA - Contador
+// CONTADOR
 let cont = 0;
-
-addClick("contadorBtn", function(){
-    cont++;
-    let p = document.getElementById("contador");
-    if(p){
-        p.textContent = "Cliques: " + cont;
-    }
+document.getElementById("contadorBtn").addEventListener("click", () => {
+cont++;
+document.getElementById("contador").innerText = "Cliques: " + cont;
 });
 
-// EXTRA - Validação formulário
-let form = document.querySelector("form");
+// ALTERAR TEXTO
+document.getElementById("btnTexto").addEventListener("click", () => {
+document.getElementById("textoOriginal").innerText = "Texto alterado com JavaScript!";
+});
 
-if(form){
-    form.addEventListener("submit", function(e){
-        let nome = document.querySelector("input[name='nome']").value;
+// MOSTRAR MAIS
+document.getElementById("btnMostrar").addEventListener("click", () => {
+let extra = document.getElementById("extra");
+extra.style.display = extra.style.display === "none" ? "block" : "none";
+});
 
-        if(nome === ""){
-            alert("O nome não pode estar vazio!");
-            e.preventDefault();
-        }
-    });
+// ALTERAR COR
+document.getElementById("btnCor").addEventListener("click", () => {
+document.body.style.background = "#" + Math.floor(Math.random()*16777215).toString(16);
+});
+
+// CEP
+document.getElementById("buscarCep").addEventListener("click", () => {
+let cep = document.getElementById("cep").value;
+
+fetch(`https://viacep.com.br/ws/${cep}/json/`)
+.then(res => res.json())
+.then(d => {
+if(d.erro){
+document.getElementById("resCep").innerText = "CEP inválido!";
+return;
 }
+document.getElementById("resCep").innerHTML =
+`Rua: ${d.logradouro}<br>
+Bairro: ${d.bairro}<br>
+Cidade: ${d.localidade}<br>
+Estado: ${d.uf}`;
+});
+});
+
+// CNPJ
+document.getElementById("buscarCnpj").addEventListener("click", () => {
+let cnpj = document.getElementById("cnpj").value.replace(/\D/g,'');
+
+fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpj}`)
+.then(res => res.json())
+.then(d => {
+if(d.message){
+document.getElementById("resCnpj").innerText = "CNPJ inválido!";
+return;
+}
+document.getElementById("resCnpj").innerHTML =
+`Empresa: ${d.razao_social}<br>
+Situação: ${d.descricao_situacao_cadastral}<br>
+Cidade: ${d.municipio} - ${d.uf}`;
+});
+});
+
+// IP
+document.getElementById("buscarIp").addEventListener("click", () => {
+fetch("https://ipapi.co/json/")
+.then(res => res.json())
+.then(d => {
+document.getElementById("resIp").innerHTML =
+`Cidade: ${d.city}<br>
+Estado: ${d.region}<br>
+País: ${d.country_name}`;
+});
+});
+
+// FORMATA CNPJ
+document.getElementById("cnpj").addEventListener("input", (e) => {
+let v = e.target.value.replace(/\D/g,'');
+
+v = v.replace(/^(\d{2})(\d)/, "$1.$2");
+v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+v = v.replace(/\.(\d{3})(\d)/, ".$1/$2");
+v = v.replace(/(\d{4})(\d)/, "$1-$2");
+
+e.target.value = v;
+});

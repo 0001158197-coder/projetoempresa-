@@ -1,218 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TechSolutions</title>
 
-  <link rel="stylesheet" href="style.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechSolutions</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <h1>TechSolutions</h1>
-        <p class="slogan">Inovação e tecnologia para o seu negócio</p>
-      </div>
+<header>
+<h1>TechSolutions</h1>
+<p>Inovação e tecnologia para o seu negócio</p>
 
-      <nav class="main-nav" aria-label="Menu principal">
-        <a href="#inicio" class="menu-item">Início</a>
-        <a href="#servicos" class="menu-item">Serviços</a>
-        <a href="#contato" class="menu-item">Contato</a>
-      </nav>
-    </div>
-  </header>
+<nav>
+<a href="#inicio">Início</a>
+<a href="#servicos">Serviços</a>
+<a href="#apis">Consultas</a>
+<a href="#contato">Cadastro</a>
+</nav>
+</header>
 
-  <main class="container">
+<main>
 
-    <section id="inicio" class="card hero">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <h2>Sobre a empresa</h2>
-          <p>A TechSolutions é uma empresa fictícia especializada em soluções tecnológicas para empresas.</p>
-          <p>Nossa equipe desenvolve sistemas modernos e eficientes para melhorar o desempenho dos negócios.</p>
+<!-- INÍCIO -->
+<section id="inicio" class="card">
+<h2>Sobre a empresa</h2>
 
-          <article class="mission">
-            <h3>Missão</h3>
-            <p>Nossa missão é oferecer tecnologia de qualidade para ajudar empresas a crescer no mercado digital.</p>
-          </article>
+<p id="textoOriginal">Este é um site sobre tecnologia.</p>
 
-          <p>
-            Saiba mais sobre tecnologia no
-            <a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools</a>.
-          </p>
+<div class="botoes">
+<button id="btnTexto">Alterar texto</button>
+<button id="btnMostrar">Mostrar mais</button>
+<button id="btnCor">Alterar cor</button>
+<button id="darkMode">Modo Escuro</button>
+</div>
 
-          <!-- CONTROLES / INTERAÇÕES -->
-          <div class="controls">
-            <button id="btnBoasVindas" class="btn">Receber mensagem</button>
-            <span id="mensagem" class="inline-msg" aria-live="polite"></span>
+<p id="extra" style="display:none;">
+Este site foi desenvolvido com JavaScript.
+</p>
 
-            <p id="textoOriginal" class="muted">Este é um site sobre tecnologia.</p>
-            <button id="btnTexto" class="btn btn-outline">Alterar texto</button>
+<br>
 
-            <div class="small-row">
-              <button id="btnCor" class="btn btn-accent">Alterar cor</button>
-              <button id="btnMostrar" class="btn btn-outline">Mostrar mais</button>
-              <button id="darkMode" class="btn">Modo Escuro</button>
-            </div>
+<button id="contadorBtn">Clique aqui</button>
+<p id="contador">Cliques: 0</p>
 
-            <div class="small-row">
-              <button id="contadorBtn" class="btn btn-primary">Clique aqui</button>
-              <span id="contador" class="counter">Cliques: 0</span>
-            </div>
-          </div>
-        </div>
+</section>
 
-        <div class="hero-media">
-          <img id="imagem" src="https://via.placeholder.com/600x400" alt="Imagem representando tecnologia">
-        </div>
-      </div>
-      <p id="extra" class="extra-text" style="display:none;">Este site foi desenvolvido com JavaScript como atividade prática.</p>
-    </section>
+<!-- SERVIÇOS -->
+<section id="servicos" class="card">
+<h2>Serviços</h2>
 
-    <section id="servicos" class="card">
-      <h2>Serviços</h2>
-      <ul class="services-list">
-        <li>Desenvolvimento de sites</li>
-        <li>Criação de sistemas web</li>
-        <li>Consultoria em tecnologia</li>
-        <li>Suporte técnico</li>
-      </ul>
-    </section>
+<ul>
+<li>Desenvolvimento de sites</li>
+<li>Criação de sistemas web</li>
+<li>Consultoria em tecnologia</li>
+<li>Suporte técnico</li>
+</ul>
+</section>
 
-    <section class="card">
-      <h2>Tabela de preços</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Serviço</th>
-              <th>Descrição</th>
-              <th>Preço</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Site institucional</td>
-              <td>Criação de site profissional</td>
-              <td>R$1500</td>
-            </tr>
-            <tr>
-              <td>Sistema web</td>
-              <td>Desenvolvimento personalizado</td>
-              <td>R$5000</td>
-            </tr>
-            <tr>
-              <td>Consultoria</td>
-              <td>Análise tecnológica</td>
-              <td>R$300/hora</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+<!-- APIs -->
+<section id="apis" class="card">
+<h2>Consultas Inteligentes</h2>
 
-    <section class="card">
-      <h2>Vídeo institucional</h2>
-      <div class="video-wrap">
-        <iframe width="100%" height="360"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="Vídeo institucional"
-          frameborder="0"
-          allowfullscreen></iframe>
-      </div>
-    </section>
+<div class="grid">
 
-    <!-- FORMULÁRIO DE CADASTRO PROFISSIONAL -->
-    <section id="contato" class="card">
-      <h2>Cadastro de Usuário</h2>
+<div class="box">
+<h3>Consulta CEP</h3>
+<input id="cep" placeholder="Digite o CEP">
+<button id="buscarCep">Buscar</button>
+<p id="resCep"></p>
+</div>
 
-      <form id="cadastroForm" class="form-grid" novalidate>
-        <!-- Bloco 1: Dados pessoais -->
-        <fieldset>
-          <legend>Dados pessoais</legend>
+<div class="box">
+<h3>Consulta CNPJ</h3>
+<input id="cnpj" placeholder="Digite o CNPJ">
+<button id="buscarCnpj">Buscar</button>
+<p id="resCnpj"></p>
+</div>
 
-          <label for="nome">Nome completo</label>
-          <input id="nome" name="nome" type="text" placeholder="Digite seu nome completo" required>
+<div class="box">
+<h3>Localização por IP</h3>
+<button id="buscarIp">Ver localização</button>
+<p id="resIp"></p>
+</div>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+</div>
+</section>
 
-          <label for="telefone">Telefone</label>
-          <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000">
+<!-- FORMULÁRIO -->
+<section id="contato" class="card">
+<h2>Cadastro</h2>
 
-          <label for="nascimento">Data de nascimento</label>
-          <input id="nascimento" name="nascimento" type="date">
-        </fieldset>
+<form class="form-grid">
 
-        <!-- Bloco 2: Conta e localização -->
-        <fieldset>
-          <legend>Conta e localização</legend>
+<input type="text" placeholder="Nome completo">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Telefone">
+<input type="password" placeholder="Senha">
 
-          <label for="senha">Senha</label>
-          <input id="senha" name="senha" type="password" placeholder="Crie uma senha" required>
+<textarea placeholder="Apresentação"></textarea>
 
-          <label for="cidade">Cidade / Estado</label>
-          <select id="cidade" name="cidade" required>
-            <option value="">Selecione</option>
-            <option>São Paulo</option>
-            <option>Rio de Janeiro</option>
-            <option>Belo Horizonte</option>
-            <option>Vitória</option>
-            <option>Salvador</option>
-          </select>
+<input type="date">
 
-          <label>Gênero</label>
-          <div class="radios">
-            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
-            <label><input type="radio" name="genero" value="feminino"> Feminino</label>
-            <label><input type="radio" name="genero" value="nao_informar"> Prefiro não informar</label>
-          </div>
-        </fieldset>
+<select>
+<option>Selecione cidade</option>
+<option>SP</option>
+<option>RJ</option>
+<option>MG</option>
+<option>ES</option>
+<option>BA</option>
+</select>
 
-        <!-- Bloco 3: Interesses e arquivo -->
-        <fieldset>
-          <legend>Interesses</legend>
+<div>
+<p>Gênero:</p>
+<label><input type="radio" name="g"> Masculino</label>
+<label><input type="radio" name="g"> Feminino</label>
+<label><input type="radio" name="g"> Prefiro não informar</label>
+</div>
 
-          <label>Áreas de interesse</label>
-          <div class="checkboxes">
-            <label><input type="checkbox" name="interesse" value="programacao"> Programação</label>
-            <label><input type="checkbox" name="interesse" value="design"> Design</label>
-            <label><input type="checkbox" name="interesse" value="redes"> Redes</label>
-            <label><input type="checkbox" name="interesse" value="banco"> Banco de Dados</label>
-            <label><input type="checkbox" name="interesse" value="ia"> Inteligência Artificial</label>
-          </div>
+<div>
+<p>Interesses:</p>
+<label><input type="checkbox"> Programação</label>
+<label><input type="checkbox"> Design</label>
+<label><input type="checkbox"> Redes</label>
+<label><input type="checkbox"> Banco de Dados</label>
+<label><input type="checkbox"> IA</label>
+</div>
 
-          <label for="foto">Foto de perfil</label>
-          <input id="foto" name="foto" type="file" accept="image/*">
-        </fieldset>
+<input type="file">
 
-        <!-- Bloco 4: Apresentação e ações -->
-        <fieldset class="full">
-          <legend>Apresentação</legend>
+<div class="botoes">
+<button type="submit">Enviar</button>
+<button type="reset">Limpar</button>
+</div>
 
-          <label for="apresentacao">Apresentação pessoal</label>
-          <textarea id="apresentacao" name="apresentacao" placeholder="Fale um pouco sobre você" rows="4"></textarea>
+</form>
+</section>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-            <button type="reset" class="btn btn-outline">Limpar</button>
-          </div>
-        </fieldset>
-      </form>
-    </section>
+</main>
 
-  </main>
+<footer>
+<p>© 2026 TechSolutions - Todos os direitos reservados</p>
+</footer>
 
-  <footer class="site-footer">
-    <div class="container small">
-      <p>Telefone: (31) 99999-9999 | Email: contato@techsolutions.com</p>
-      <p>Endereço: Rua da Tecnologia, 123</p>
-      <p>© 2026 TechSolutions - Todos os direitos reservados</p>
-    </div>
-  </footer>
+<script src="script.js"></script>
 
-  <script src="script.js"></script>
 </body>
 </html>
