@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>TechSolutions</title>
 
-<!-- Conexão com o arquivo CSS -->
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,9 +21,9 @@
 <br>
 
 <nav>
-<a href="#inicio">Início</a>
-<a href="#servicos">Serviços</a>
-<a href="#contato">Contato</a>
+<a href="#inicio" class="menu-item">Início</a>
+<a href="#servicos" class="menu-item">Serviços</a>
+<a href="#contato" class="menu-item">Contato</a>
 </nav>
 
 </header>
@@ -46,12 +46,31 @@
 
 </article>
 
-<img src="https://via.placeholder.com/400" alt="Imagem representando tecnologia">
+<img id="imagem" src="https://via.placeholder.com/400" alt="Imagem representando tecnologia">
 
 <p>
 Saiba mais sobre tecnologia no site
 <a href="https://www.w3schools.com" target="_blank">W3Schools</a>
 </p>
+
+<!-- BOTÕES JS -->
+<button id="btnBoasVindas">Clique para receber uma mensagem</button>
+<p id="mensagem"></p>
+
+<p id="textoOriginal">Este é um site sobre tecnologia.</p>
+<button id="btnTexto">Alterar texto</button>
+
+<button id="btnCor">Alterar cor da seção</button>
+
+<button id="btnMostrar">Mostrar mais informações</button>
+<p id="extra" style="display:none;">
+Este site foi desenvolvido como atividade prática de JavaScript.
+</p>
+
+<button id="darkMode">Modo Escuro</button>
+
+<button id="contadorBtn">Clique aqui</button>
+<p id="contador">Cliques: 0</p>
 
 </section>
 
@@ -149,7 +168,7 @@ allowfullscreen>
 
 <footer>
 
-<p>Telefone: (27) 99999-9999</p>
+<p>Telefone: (31) 99999-9999</p>
 <p>Email: contato@techsolutions.com</p>
 <p>Endereço: Rua da Tecnologia, 123</p>
 
@@ -157,5 +176,8 @@ allowfullscreen>
 
 </footer>
 
+<!-- JS -->
+<script src="script.js"></script>
+
 </body>
-</html> 
+</html>
