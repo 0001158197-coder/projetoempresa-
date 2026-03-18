@@ -1,183 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<meta charset="UTF-8">
-<title>TechSolutions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TechSolutions</title>
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <h1>TechSolutions</h1>
+        <p class="slogan">Inovação e tecnologia para o seu negócio</p>
+      </div>
 
-<h1>TechSolutions</h1>
+      <nav class="main-nav" aria-label="Menu principal">
+        <a href="#inicio" class="menu-item">Início</a>
+        <a href="#servicos" class="menu-item">Serviços</a>
+        <a href="#contato" class="menu-item">Contato</a>
+      </nav>
+    </div>
+  </header>
 
-<p>Inovação e tecnologia para o seu negócio</p>
+  <main class="container">
 
-<br>
+    <section id="inicio" class="card hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h2>Sobre a empresa</h2>
+          <p>A TechSolutions é uma empresa fictícia especializada em soluções tecnológicas para empresas.</p>
+          <p>Nossa equipe desenvolve sistemas modernos e eficientes para melhorar o desempenho dos negócios.</p>
 
-<nav>
-<a href="#inicio" class="menu-item">Início</a>
-<a href="#servicos" class="menu-item">Serviços</a>
-<a href="#contato" class="menu-item">Contato</a>
-</nav>
+          <article class="mission">
+            <h3>Missão</h3>
+            <p>Nossa missão é oferecer tecnologia de qualidade para ajudar empresas a crescer no mercado digital.</p>
+          </article>
 
-</header>
+          <p>
+            Saiba mais sobre tecnologia no
+            <a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools</a>.
+          </p>
 
-<main>
+          <!-- CONTROLES / INTERAÇÕES -->
+          <div class="controls">
+            <button id="btnBoasVindas" class="btn">Receber mensagem</button>
+            <span id="mensagem" class="inline-msg" aria-live="polite"></span>
 
-<section id="inicio">
+            <p id="textoOriginal" class="muted">Este é um site sobre tecnologia.</p>
+            <button id="btnTexto" class="btn btn-outline">Alterar texto</button>
 
-<h2>Sobre a empresa</h2>
+            <div class="small-row">
+              <button id="btnCor" class="btn btn-accent">Alterar cor</button>
+              <button id="btnMostrar" class="btn btn-outline">Mostrar mais</button>
+              <button id="darkMode" class="btn">Modo Escuro</button>
+            </div>
 
-<p>A TechSolutions é uma empresa fictícia especializada em soluções tecnológicas para empresas.</p>
+            <div class="small-row">
+              <button id="contadorBtn" class="btn btn-primary">Clique aqui</button>
+              <span id="contador" class="counter">Cliques: 0</span>
+            </div>
+          </div>
+        </div>
 
-<p>Nossa equipe desenvolve sistemas modernos e eficientes para melhorar o desempenho dos negócios.</p>
+        <div class="hero-media">
+          <img id="imagem" src="https://via.placeholder.com/600x400" alt="Imagem representando tecnologia">
+        </div>
+      </div>
+      <p id="extra" class="extra-text" style="display:none;">Este site foi desenvolvido com JavaScript como atividade prática.</p>
+    </section>
 
-<article>
+    <section id="servicos" class="card">
+      <h2>Serviços</h2>
+      <ul class="services-list">
+        <li>Desenvolvimento de sites</li>
+        <li>Criação de sistemas web</li>
+        <li>Consultoria em tecnologia</li>
+        <li>Suporte técnico</li>
+      </ul>
+    </section>
 
-<h3>Missão da empresa</h3>
+    <section class="card">
+      <h2>Tabela de preços</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Serviço</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Site institucional</td>
+              <td>Criação de site profissional</td>
+              <td>R$1500</td>
+            </tr>
+            <tr>
+              <td>Sistema web</td>
+              <td>Desenvolvimento personalizado</td>
+              <td>R$5000</td>
+            </tr>
+            <tr>
+              <td>Consultoria</td>
+              <td>Análise tecnológica</td>
+              <td>R$300/hora</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<p>Nossa missão é oferecer tecnologia de qualidade para ajudar empresas a crescer no mercado digital.</p>
+    <section class="card">
+      <h2>Vídeo institucional</h2>
+      <div class="video-wrap">
+        <iframe width="100%" height="360"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="Vídeo institucional"
+          frameborder="0"
+          allowfullscreen></iframe>
+      </div>
+    </section>
 
-</article>
+    <!-- FORMULÁRIO DE CADASTRO PROFISSIONAL -->
+    <section id="contato" class="card">
+      <h2>Cadastro de Usuário</h2>
 
-<img id="imagem" src="https://via.placeholder.com/400" alt="Imagem representando tecnologia">
+      <form id="cadastroForm" class="form-grid" novalidate>
+        <!-- Bloco 1: Dados pessoais -->
+        <fieldset>
+          <legend>Dados pessoais</legend>
 
-<p>
-Saiba mais sobre tecnologia no site
-<a href="https://www.w3schools.com" target="_blank">W3Schools</a>
-</p>
+          <label for="nome">Nome completo</label>
+          <input id="nome" name="nome" type="text" placeholder="Digite seu nome completo" required>
 
-<!-- BOTÕES JS -->
-<button id="btnBoasVindas">Clique para receber uma mensagem</button>
-<p id="mensagem"></p>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="seu@email.com" required>
 
-<p id="textoOriginal">Este é um site sobre tecnologia.</p>
-<button id="btnTexto">Alterar texto</button>
+          <label for="telefone">Telefone</label>
+          <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000">
 
-<button id="btnCor">Alterar cor da seção</button>
+          <label for="nascimento">Data de nascimento</label>
+          <input id="nascimento" name="nascimento" type="date">
+        </fieldset>
 
-<button id="btnMostrar">Mostrar mais informações</button>
-<p id="extra" style="display:none;">
-Este site foi desenvolvido como atividade prática de JavaScript.
-</p>
+        <!-- Bloco 2: Conta e localização -->
+        <fieldset>
+          <legend>Conta e localização</legend>
 
-<button id="darkMode">Modo Escuro</button>
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" placeholder="Crie uma senha" required>
 
-<button id="contadorBtn">Clique aqui</button>
-<p id="contador">Cliques: 0</p>
+          <label for="cidade">Cidade / Estado</label>
+          <select id="cidade" name="cidade" required>
+            <option value="">Selecione</option>
+            <option>São Paulo</option>
+            <option>Rio de Janeiro</option>
+            <option>Belo Horizonte</option>
+            <option>Vitória</option>
+            <option>Salvador</option>
+          </select>
 
-</section>
+          <label>Gênero</label>
+          <div class="radios">
+            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+            <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+            <label><input type="radio" name="genero" value="nao_informar"> Prefiro não informar</label>
+          </div>
+        </fieldset>
 
-<section id="servicos">
+        <!-- Bloco 3: Interesses e arquivo -->
+        <fieldset>
+          <legend>Interesses</legend>
 
-<h2>Serviços</h2>
+          <label>Áreas de interesse</label>
+          <div class="checkboxes">
+            <label><input type="checkbox" name="interesse" value="programacao"> Programação</label>
+            <label><input type="checkbox" name="interesse" value="design"> Design</label>
+            <label><input type="checkbox" name="interesse" value="redes"> Redes</label>
+            <label><input type="checkbox" name="interesse" value="banco"> Banco de Dados</label>
+            <label><input type="checkbox" name="interesse" value="ia"> Inteligência Artificial</label>
+          </div>
 
-<ul>
-<li>Desenvolvimento de sites</li>
-<li>Criação de sistemas web</li>
-<li>Consultoria em tecnologia</li>
-<li>Suporte técnico</li>
-</ul>
+          <label for="foto">Foto de perfil</label>
+          <input id="foto" name="foto" type="file" accept="image/*">
+        </fieldset>
 
-</section>
+        <!-- Bloco 4: Apresentação e ações -->
+        <fieldset class="full">
+          <legend>Apresentação</legend>
 
-<section>
+          <label for="apresentacao">Apresentação pessoal</label>
+          <textarea id="apresentacao" name="apresentacao" placeholder="Fale um pouco sobre você" rows="4"></textarea>
 
-<h2>Tabela de preços</h2>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="reset" class="btn btn-outline">Limpar</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
 
-<table border="1">
+  </main>
 
-<thead>
-<tr>
-<th>Serviço</th>
-<th>Descrição</th>
-<th>Preço</th>
-</tr>
-</thead>
+  <footer class="site-footer">
+    <div class="container small">
+      <p>Telefone: (31) 99999-9999 | Email: contato@techsolutions.com</p>
+      <p>Endereço: Rua da Tecnologia, 123</p>
+      <p>© 2026 TechSolutions - Todos os direitos reservados</p>
+    </div>
+  </footer>
 
-<tbody>
-
-<tr>
-<td>Site institucional</td>
-<td>Criação de site profissional</td>
-<td>R$1500</td>
-</tr>
-
-<tr>
-<td>Sistema web</td>
-<td>Desenvolvimento personalizado</td>
-<td>R$5000</td>
-</tr>
-
-<tr>
-<td>Consultoria</td>
-<td>Análise tecnológica</td>
-<td>R$300/hora</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</section>
-
-<section>
-
-<h2>Vídeo institucional</h2>
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-title="Vídeo institucional"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</section>
-
-<section id="contato">
-
-<h2>Formulário de contato</h2>
-
-<form>
-
-<label>Nome</label><br>
-<input type="text" name="nome"><br><br>
-
-<label>Email</label><br>
-<input type="email" name="email"><br><br>
-
-<label>Telefone</label><br>
-<input type="tel" name="telefone"><br><br>
-
-<label>Mensagem</label><br>
-<textarea name="mensagem"></textarea><br><br>
-
-<button type="submit">Enviar</button>
-
-</form>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>Telefone: (31) 99999-9999</p>
-<p>Email: contato@techsolutions.com</p>
-<p>Endereço: Rua da Tecnologia, 123</p>
-
-<p>© 2026 TechSolutions - Todos os direitos reservados</p>
-
-</footer>
-
-<!-- JS -->
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
